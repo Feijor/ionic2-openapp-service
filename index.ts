@@ -33,4 +33,8 @@ export class Ionic2openappService {
     );
   }
 
+  launch(openapp: string, username: string){
+    let browser = this.iab.create(openapp + username, '_system');
+  }
+
 }
