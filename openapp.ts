@@ -4,7 +4,7 @@ import { AppAvailability } from '@ionic-native/app-availability';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Injectable()
-export class Ionic2openappService {
+export class OpenAppService {
 
   apps = {
     "facebook": {"ios":'fb://','android':'com.facebook.katana','appurl':'fb://profile/','url':'https://www.facebook.com/'},
@@ -35,6 +35,10 @@ export class Ionic2openappService {
 
   launch(openapp: string, username: string){
     let browser = this.iab.create(openapp + username, '_system');
+  }
+  
+  open(link: string){
+    let browser = this.iab.create(link, '_system');
   }
 
 }
